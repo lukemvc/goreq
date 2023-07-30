@@ -4,11 +4,12 @@ A Golang package for http/https requests, built using sockets ("net")
 
 ---
 
-## Get Request
+## GET, OPTIONS, DELETE
 - Headers are optional
 ```golang
 
 func main() {
+
     url := "https://example.com"
     headers := map[string]string{
         "origin": "https://example.com",
@@ -22,7 +23,7 @@ func main() {
     }
 
     // Perform the request and check for errors
-    response, err := request.get()
+    response, err := request.get() // OR request.Options() OR request.Delete()
     if err != nil {
         fmt.Println("Error:", err)
         return
@@ -34,7 +35,7 @@ func main() {
 ```
 <br>
 
-## Post Request
+## POST, PUT
 - Support for url-encoded and application/json payloads
 - Headers are optional, Content-Type and Content-Length will be set by default depending on the payload
 
@@ -60,7 +61,7 @@ func main() {
     }
 
     // Perform the request and check for errors
-    response, err := request.Post()
+    response, err := request.Post() // OR request.Put()
     if err != nil {
         fmt.Println("Error:", err)
         return
@@ -102,7 +103,7 @@ func main() {
     }
 
     // Perform request and check for errors
-    jsonResponse, err := jsonRequest.Post()
+    jsonResponse, err := jsonRequest.Post() // OR jsonRequest.Put()
     if err != nil {
         fmt.Println("Error:", err)
         return
@@ -113,3 +114,4 @@ func main() {
 }
 
 ```
+

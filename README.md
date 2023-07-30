@@ -3,6 +3,12 @@
 A Golang package for http/https requests, built using sockets ("net")
 
 ---
+## Installation
+
+```console
+go get github.com/lukemvc/goreq
+
+```
 
 ## GET, OPTIONS, DELETE
 - Headers are optional
@@ -17,7 +23,7 @@ func main() {
     }
 
     // Construct the request
-    request := &Request{
+    request := &goreq.Request{
         Url: url,
         Headers: headers,
     }
@@ -54,7 +60,7 @@ func main() {
     data := "email=user@example.com&password=Password123!"
 
     // Construct the request
-    request := &Request{
+    request := &goreq.Request{
         Url: url,
         Headers: headers,
         Data: data,
@@ -96,7 +102,7 @@ func main() {
     }
 
     // Construct request with Json payload
-    jsonRequest := &Request{
+    jsonRequest := &goreq.Request{
         Url: url,
         Headers: headers,
         Json: jsonPayload,

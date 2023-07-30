@@ -37,6 +37,7 @@ func makeRequest(requestInfo *RequestInfo) (*Response, error) {
 	}
 	
 	response := &Response{}
+	response.Size = n
 	response.Raw = string(requestInfo.ResponseBuffer[:n])
 	if err := parseRawResponse(response); err != nil {
 		return nil, err

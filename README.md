@@ -1,4 +1,4 @@
-# Go Requests
+# Goreq
 
 A Golang package for http/https requests, built using sockets ("net")
 

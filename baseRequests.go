@@ -36,9 +36,11 @@ func makeRequest(requestInfo *RequestInfo) (*Response, error) {
 			return nil, errors.New("invalid url prefix, must be http/https")
 	}
 	
-	response := &Response{}
-	response.Size = n
-	response.Raw = string(requestInfo.ResponseBuffer[:n])
+	response := &Response{
+		Size: n,
+		Raw: string(requestInfo.ResponseBuffer[:n]),
+	}
+	
 	if err := parseRawResponse(response); err != nil {
 		return nil, err
 	}

@@ -8,9 +8,6 @@ import (
 	"encoding/json"
 )
 
-// Functions that are used by all request methods
-/////////////////////////////////////////////////
-
 func makeRequest(requestInfo *RequestInfo) (*Response, error) {
 	var n int
 	var err error
